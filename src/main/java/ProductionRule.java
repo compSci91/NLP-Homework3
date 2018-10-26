@@ -36,8 +36,43 @@ public class ProductionRule {
         return false;
     }
 
+    public boolean hasLeftHandSide(String leftHandSide){
+        return this.leftHandSide == leftHandSide;
+    }
+
     public String getLeftHandSide(){
         return this.leftHandSide;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ProductionRule otherProductionRule = (ProductionRule) o;
+
+        if(this.leftHandSide != otherProductionRule.leftHandSide){
+            return false;
+        }
+
+        if(this.rightHandSide.size() != otherProductionRule.rightHandSide.size()){
+            return false;
+        }
+
+        for(String productionString : rightHandSide){
+            if(!otherProductionRule.rightHandSide.contains(productionString))
+                return false;
+        }
+
+        return true;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = leftHandSide != null ? leftHandSide.hashCode() : 0;
+        result = 31 * result + (rightHandSide != null ? rightHandSide.hashCode() : 0);
+        return result;
     }
 
     @Override
