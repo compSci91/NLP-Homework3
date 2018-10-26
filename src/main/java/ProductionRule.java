@@ -84,9 +84,19 @@ public class ProductionRule {
             return false;
         }
 
-        for(String productionString : rightHandSide){
-            if(!otherProductionRule.rightHandSide.contains(productionString))
+//        for(String productionString : rightHandSide){
+//            if(!otherProductionRule.rightHandSide.contains(productionString))
+//                return false;
+//        }
+
+        for (int i = 0; i < rightHandSide.size(); i++){
+            if(!rightHandSide.get(i).equals(otherProductionRule.rightHandSide.get(i))){
                 return false;
+            }
+        }
+
+        if(probability != otherProductionRule.probability){
+            return false;
         }
 
         return true;
