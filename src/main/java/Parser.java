@@ -25,9 +25,10 @@ public class Parser {
 
             //need to handle unary!
 
-//            boolean added = true;
-//            while(added){
-//                added = false;
+            boolean someWereAdded = true;
+            while(someWereAdded){
+
+                someWereAdded = false;
                 List<ProductionRule> unaryProductionRules = grammar.retrieveProductionRulesWithOneNonTerminal();
 
                 for(ProductionRule unaryProductionRule : unaryProductionRules){
@@ -38,15 +39,18 @@ public class Parser {
                         double unaryProductionRuleProbability = unaryProductionRule.getProbability();
 
 
-                        table[j-1][j].add(unaryProductionRule.createNewProductionRule(foundProductionRuleProbability * unaryProductionRuleProbability));
-
+                        ProductionRule newUnaryProductionRule = unaryProductionRule.createNewProductionRule(foundProductionRuleProbability * unaryProductionRuleProbability);
+                        if(!table[j-1][j].contains(newUnaryProductionRule)){
+                            table[j-1][j].add(newUnaryProductionRule);
+                            someWereAdded = true;
+                        }
 
 
                     }
                 }
 
 
-           // }
+            }
 
 
 

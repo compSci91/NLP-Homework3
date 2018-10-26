@@ -17,6 +17,11 @@ public class ProductionRuleList {
         return false;
     }
 
+    public boolean contains(ProductionRule productionRule){
+        return productionRuleList.contains(productionRule);
+
+    }
+
     public boolean add(ProductionRule productionRule){
         return productionRuleList.add(productionRule);
     }
