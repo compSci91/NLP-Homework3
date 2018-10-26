@@ -13,6 +13,7 @@ public class ProductionRule {
         this.probability = probablitilty;
     }
 
+
     public ProductionRule(String productionString){
         Scanner productionStringScanner = new Scanner(productionString);
 
@@ -36,8 +37,28 @@ public class ProductionRule {
         return false;
     }
 
+    public boolean hasRightHandSideOfNonTerminals(){
+        return this.rightHandSide.size() == 2;
+    }
+
     public boolean hasLeftHandSide(String leftHandSide){
         return this.leftHandSide == leftHandSide;
+    }
+
+    public String getFirstNonTerminal(){
+        return rightHandSide.get(0);
+    }
+
+    public String getSecondtNonTerminal(){
+        return rightHandSide.get(1);
+    }
+
+    public double getProbability(){
+        return probability;
+    }
+
+    public ProductionRule createNewProductionRule(double probability){
+        return new ProductionRule(this.leftHandSide, this.rightHandSide, probability);
     }
 
     public String getLeftHandSide(){

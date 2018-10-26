@@ -9,7 +9,6 @@ public class Main {
 
         Grammar grammar = new Grammar(grammarFile);
 
-
         File sentsFile = new File("/Users/JoshuaHowell/Desktop/Texas A&M/Year 2/Fall 2018/Natural Language Processing/pa3-cky/sents.txt");
 
         Scanner sentsScanner = null;
@@ -27,7 +26,6 @@ public class Main {
 
         ProductionRuleList[][] productionRules = new Parser().ckyParse(words, grammar);
 
-       // System.out.println(grammar);
 
         System.out.println(productionRules[0][1]);
 
