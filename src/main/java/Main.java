@@ -1,8 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,18 +15,21 @@ public class Main {
         }
 
 
-        Set<ProductionRule> productionRules = new HashSet<ProductionRule>();
+        List<ProductionRule> productionRules = new ArrayList<ProductionRule>();
 
         while (fileScanner.hasNextLine()) {
             String productionString = fileScanner.nextLine();
 
             ProductionRule newProduction = new ProductionRule(productionString);
 
-            System.out.println(newProduction);
-
             productionRules.add(newProduction);
-           //  System.out.println( fileScanner.nextLine());
-
         }
+
+        Grammar grammar = new Grammar(productionRules);
+
+        System.out.println(grammar);
+
+
+
     }
 }

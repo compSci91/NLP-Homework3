@@ -3,9 +3,9 @@ import java.util.List;
 import java.util.Set;
 
 public class Grammar {
-    private Set<ProductionRule> productionRules;
+    private List<ProductionRule> productionRules;
 
-    private Grammar(Set<ProductionRule> productionRules){
+    public Grammar(List<ProductionRule> productionRules){
         this.productionRules = productionRules;
     }
 
@@ -26,6 +26,17 @@ public class Grammar {
 
             return productionRulesToReturn;
 
+    }
+
+    @Override
+    public String toString(){
+        String string = "";
+
+        for (ProductionRule productionRule : this.productionRules) {
+            string += productionRule.toString() + "\n";
+        }
+
+        return string;
     }
 
 }
