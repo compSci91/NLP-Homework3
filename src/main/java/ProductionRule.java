@@ -46,7 +46,7 @@ public class ProductionRule {
     }
 
     public boolean hasLeftHandSide(String leftHandSide){
-        return this.leftHandSide == leftHandSide;
+        return this.leftHandSide.equals(leftHandSide);
     }
 
     public String getFirstNonTerminal(){

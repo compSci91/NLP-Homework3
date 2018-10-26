@@ -25,46 +25,64 @@ public class Parser {
 
             //need to handle unary!
 
-            boolean added = true;
-            while(added){
+//            boolean added = true;
+//            while(added){
+//                added = false;
+                List<ProductionRule> unaryProductionRules = grammar.retrieveProductionRulesWithOneNonTerminal();
 
-            }
+                for(ProductionRule unaryProductionRule : unaryProductionRules){
+                    String nonTerminal = unaryProductionRule.getFirstNonTerminal();
 
-
-
-
-            for(int i = j-2; i>=0; i--){
-                for(int k = i + 1; k<=j-1; k++){
-                    for(ProductionRule productionRuleWithNonTerminal : productionRulesWithNonTerminals) {
-
-                        try {
-                            String bProductionString = productionRuleWithNonTerminal.getFirstNonTerminal();
-                            String cProductionString = productionRuleWithNonTerminal.getSecondtNonTerminal();
-
-                            ProductionRuleList ikProductionRuleList = table[i][k];
-                            ProductionRuleList kjProductionRuleList = table[k][j];
-
-                            if (ikProductionRuleList.hasProductionRuleWithLeftHandSide(bProductionString) && kjProductionRuleList.hasProductionRuleWithLeftHandSide(cProductionString)) {
-                                double ikProbability = ikProductionRuleList.getProbabilityForProductionRuleWithLeftHandSide(bProductionString);
-                                double kjProbability = kjProductionRuleList.getProbabilityForProductionRuleWithLeftHandSide(cProductionString);
-                                double productRuleProbability = productionRuleWithNonTerminal.getProbability();
-
-                                ProductionRule newProductRule = productionRuleWithNonTerminal.createNewProductionRule(ikProbability * kjProbability * productRuleProbability);
-
-                                table[i][j].add(newProductRule);
+                    if (productionRuleList.hasProductionRuleWithLeftHandSide(nonTerminal)) {
+                        double foundProductionRuleProbability = productionRuleList.getProbabilityForProductionRuleWithLeftHandSide(nonTerminal);
+                        double unaryProductionRuleProbability = unaryProductionRule.getProbability();
 
 
-                            }
-                        } catch(ArrayIndexOutOfBoundsException e){
-                            //do nothing
-                        }
+                        table[j-1][j].add(unaryProductionRule.createNewProductionRule(foundProductionRuleProbability * unaryProductionRuleProbability));
+
+
 
                     }
-
-
-
                 }
-           }
+
+
+           // }
+
+
+
+
+//            for(int i = j-2; i>=0; i--){
+//                for(int k = i + 1; k<=j-1; k++){
+//                    for(ProductionRule productionRuleWithNonTerminal : productionRulesWithNonTerminals) {
+//
+//                        try {
+//                            String bProductionString = productionRuleWithNonTerminal.getFirstNonTerminal();
+//                            String cProductionString = productionRuleWithNonTerminal.getSecondtNonTerminal();
+//
+//                            ProductionRuleList ikProductionRuleList = table[i][k];
+//                            ProductionRuleList kjProductionRuleList = table[k][j];
+//
+//                            if (ikProductionRuleList.hasProductionRuleWithLeftHandSide(bProductionString) && kjProductionRuleList.hasProductionRuleWithLeftHandSide(cProductionString)) {
+//                                double ikProbability = ikProductionRuleList.getProbabilityForProductionRuleWithLeftHandSide(bProductionString);
+//                                double kjProbability = kjProductionRuleList.getProbabilityForProductionRuleWithLeftHandSide(cProductionString);
+//                                double productRuleProbability = productionRuleWithNonTerminal.getProbability();
+//
+//                                ProductionRule newProductRule = productionRuleWithNonTerminal.createNewProductionRule(ikProbability * kjProbability * productRuleProbability);
+//
+//                                table[i][j].add(newProductRule);
+//
+//
+//                            }
+//                        } catch(ArrayIndexOutOfBoundsException e){
+//                            //do nothing
+//                        }
+//
+//                    }
+//
+//
+//
+//                }
+//           }
 
 
 
