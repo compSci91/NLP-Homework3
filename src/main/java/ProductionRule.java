@@ -37,6 +37,10 @@ public class ProductionRule {
         return false;
     }
 
+    public boolean hasRightHandSideOfOneNonTerminal(){
+        return this.rightHandSide.size() == 1;
+    }
+
     public boolean hasRightHandSideOfNonTerminals(){
         return this.rightHandSide.size() == 2;
     }

@@ -9,25 +9,28 @@ public class Main {
 
         Grammar grammar = new Grammar(grammarFile);
 
-        File sentsFile = new File("/Users/JoshuaHowell/Desktop/Texas A&M/Year 2/Fall 2018/Natural Language Processing/pa3-cky/sents.txt");
+        //System.out.println(grammar.retrieveProductionRulesWithTwoNonTerminals());
+        System.out.println(grammar.retrieveProductionRulesWithOneNonTerminal());
 
-        Scanner sentsScanner = null;
-        try {
-            sentsScanner = new Scanner(sentsFile);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        List<String> words = new ArrayList<String>();
-
-        while(sentsScanner.hasNext()){
-            words.add(sentsScanner.next());
-        }
-
-        ProductionRuleList[][] productionRules = new Parser().ckyParse(words, grammar);
-
-
-        System.out.println(productionRules[0][1]);
+//        File sentsFile = new File("/Users/JoshuaHowell/Desktop/Texas A&M/Year 2/Fall 2018/Natural Language Processing/pa3-cky/sents.txt");
+//
+//        Scanner sentsScanner = null;
+//        try {
+//            sentsScanner = new Scanner(sentsFile);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//        List<String> words = new ArrayList<String>();
+//
+//        while(sentsScanner.hasNext()){
+//            words.add(sentsScanner.next());
+//        }
+//
+//        ProductionRuleList[][] productionRules = new Parser().ckyParse(words, grammar);
+//
+//
+//        System.out.println(productionRules[0][1]);
 
 
     }

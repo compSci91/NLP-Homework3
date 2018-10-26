@@ -23,7 +23,12 @@ public class Parser {
             table[j-1][j] = productionRuleList;
 
 
+            //need to handle unary!
 
+            boolean added = true;
+            while(added){
+
+            }
 
 
 

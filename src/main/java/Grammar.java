@@ -49,6 +49,19 @@ public class Grammar {
             return productionRulesToReturn;
     }
 
+    public ArrayList<ProductionRule> retrieveProductionRulesWithOneNonTerminal(){
+        ArrayList<ProductionRule> productionRulesToReturn = new ArrayList<ProductionRule>();
+
+
+        for (ProductionRule productionRule : this.productionRules) {
+            if(productionRule.hasRightHandSideOfOneNonTerminal()){
+                productionRulesToReturn.add(productionRule);
+            }
+        }
+
+        return productionRulesToReturn;
+    }
+
     public ArrayList<ProductionRule> retrieveProductionRulesWithTwoNonTerminals(){
         ArrayList<ProductionRule> productionRulesToReturn = new ArrayList<ProductionRule>();
 
