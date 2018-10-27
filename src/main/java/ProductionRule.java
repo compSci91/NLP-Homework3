@@ -114,7 +114,17 @@ public class ProductionRule {
         String printString = "P(" + this.leftHandSide + ") = " + this.probability + " ";
 
         if(isRightHandSideNonTerminal()){
-            printString += "(BackPointer = " + this.rightHandSide.get(0) +  ")";
+//            printString += "(BackPointer = " + this.rightHandSide.get(0) +  ")";
+
+            String rightSideRepresentation = "";
+
+            if(this.rightHandSide.size() == 1){
+                rightSideRepresentation = this.rightHandSide.get(0);
+            } else {
+                rightSideRepresentation = "(" + this.rightHandSide.get(0) + ", " + this.rightHandSide.get(1) + ")";
+            }
+            printString += "(BackPointer = " + rightSideRepresentation +  ")";
+
         }
 
         return printString;
