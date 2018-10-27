@@ -6,11 +6,14 @@ public class ProductionRule {
     private String leftHandSide;
     private List<String> rightHandSide;
     private double probability;
+    private int split;
 
     public ProductionRule(String leftHandSide, List<String> rightHandSide, double probablitilty){
         this.leftHandSide = leftHandSide;
         this.rightHandSide = rightHandSide;
         this.probability = probablitilty;
+
+        this.split = -1;
     }
 
 
@@ -69,6 +72,10 @@ public class ProductionRule {
         return this.leftHandSide;
     }
 
+    public void setSplit(int split){
+        this.split = split;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -121,7 +128,7 @@ public class ProductionRule {
             if(this.rightHandSide.size() == 1){
                 rightSideRepresentation = this.rightHandSide.get(0);
             } else {
-                rightSideRepresentation = "(" + this.rightHandSide.get(0) + ", " + this.rightHandSide.get(1) + ")";
+                rightSideRepresentation = "(" + this.split + ", " + this.rightHandSide.get(0) + ", " + this.rightHandSide.get(1) + ")";
             }
             printString += "(BackPointer = " + rightSideRepresentation +  ")";
 

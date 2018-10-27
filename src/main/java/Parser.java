@@ -134,7 +134,7 @@ public class Parser {
                                     double productRuleProbability = productionRuleWithNonTerminal.getProbability();
 
                                     ProductionRule newProductionRule = productionRuleWithNonTerminal.createNewProductionRule(ikProbability * kjProbability * productRuleProbability);
-
+                                    newProductionRule.setSplit(k);
 //                                    if(!table[i][j].contains(newProductRule)) {
 //                                        table[i][j].add(newProductRule);
 //                                        someWereAdded = true;
