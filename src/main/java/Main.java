@@ -31,6 +31,8 @@ public class Main {
 
 
         System.out.println(productionRules[0][2]);
+
+//        System.out.println(productionRules[0][1]);
 //        System.out.println();
 //        System.out.println();
 //

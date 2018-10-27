@@ -76,18 +76,13 @@ public class ProductionRule {
 
         ProductionRule otherProductionRule = (ProductionRule) o;
 
-        if(this.leftHandSide != otherProductionRule.leftHandSide){
+        if(!this.leftHandSide.equals(otherProductionRule.leftHandSide)) {
             return false;
         }
 
         if(this.rightHandSide.size() != otherProductionRule.rightHandSide.size()){
             return false;
         }
-
-//        for(String productionString : rightHandSide){
-//            if(!otherProductionRule.rightHandSide.contains(productionString))
-//                return false;
-//        }
 
         for (int i = 0; i < rightHandSide.size(); i++){
             if(!rightHandSide.get(i).equals(otherProductionRule.rightHandSide.get(i))){

@@ -31,9 +31,6 @@ public class Grammar {
         }
     }
 
-    public boolean contains(ProductionRule productionRule){
-        return this.productionRules.contains(productionRule);
-    }
 
     public ArrayList<ProductionRule> retrieveProductionRules(String rightHandSide){
         ArrayList<ProductionRule> productionRulesToReturn = new ArrayList<ProductionRule>();
