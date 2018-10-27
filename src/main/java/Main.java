@@ -6,13 +6,14 @@ public class Main {
     public static void main(String[] args) {
 
         File grammarFile = new File("/Users/JoshuaHowell/Desktop/Texas A&M/Year 2/Fall 2018/Natural Language Processing/pa3-cky/grammar_rules.txt");
+       // File grammarFile = new File(args[0]);
 
-        Grammar grammar = new Grammar(grammarFile);
-
-        //System.out.println(grammar.retrieveProductionRulesWithTwoNonTerminals());
-//        System.out.println(grammar.retrieveProductionRulesWithOneNonTerminal());
 
         File sentsFile = new File("/Users/JoshuaHowell/Desktop/Texas A&M/Year 2/Fall 2018/Natural Language Processing/pa3-cky/sents.txt");
+
+       // File sentsFile = new File(args[1]);
+
+        Grammar grammar = new Grammar(grammarFile);
 
         Scanner sentsScanner = null;
         try {

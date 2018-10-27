@@ -1,0 +1,7 @@
+Note to Wenlin Yao
+
+The code has been compiled for your convenience. Per feedback you gave me on Homework 1, I've endeavored to make the run optinos look as similiar to Python as possible. 
+
+To run this code, place grammar_rules.txt and sents.txt in the same directory. 
+
+Then, simply run java Main grammar_rules.text sents.txt. 

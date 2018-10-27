@@ -118,10 +118,16 @@ public class ProductionRule {
 
     @Override
     public String toString(){
-        String printString = "P(" + this.leftHandSide + ") = " + this.probability + " ";
+        String leftSideRepresentation = this.leftHandSide;
+
+        if(!isRightHandSideNonTerminal()){
+            leftSideRepresentation += " " + this.rightHandSide.get(0);
+        }
+
+
+        String printString = "P(" + leftSideRepresentation+ ") = " + this.probability + " ";
 
         if(isRightHandSideNonTerminal()){
-//            printString += "(BackPointer = " + this.rightHandSide.get(0) +  ")";
 
             String rightSideRepresentation = "";
 
