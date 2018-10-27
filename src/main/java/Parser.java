@@ -145,15 +145,15 @@ public class Parser {
                                     }
 
 
-//                                    else if(table[i][j].containsWithSameLeftHandSide(newProductionRule)) { //is there a productionRule for the same nonterminal?
-//                                        ProductionRule productionRuleWithSameLeftHandSide = table[i][j].getProductionRuleWithSameLeftHandSide(newProductionRule); // if there is, get it.
-//
-//                                        if(newProductionRule.getProbability() > productionRuleWithSameLeftHandSide.getProbability()){ //does the new productRule have the same left hand side but a higher probability if you follow it?
-//                                            table[i][j].replaceProductionRuleWithSameLeftHandSide(newProductionRule); //if so, replace the one that was there before
-//                                            someWereAdded = true; //mark that one was added
-//                                        }
-//
-//                                    }
+                                    else if(table[i][j].containsWithSameLeftHandSide(newProductionRule)) { //is there a productionRule for the same nonterminal?
+                                        ProductionRule productionRuleWithSameLeftHandSide = table[i][j].getProductionRuleWithSameLeftHandSide(newProductionRule); // if there is, get it.
+
+                                        if(newProductionRule.getProbability() > productionRuleWithSameLeftHandSide.getProbability()){ //does the new productRule have the same left hand side but a higher probability if you follow it?
+                                            table[i][j].replaceProductionRuleWithSameLeftHandSide(newProductionRule); //if so, replace the one that was there before
+                                            someWereAdded = true; //mark that one was added
+                                        }
+
+                                    }
 
 
                                     else {
