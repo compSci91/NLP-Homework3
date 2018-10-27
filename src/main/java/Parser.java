@@ -191,15 +191,15 @@ public class Parser {
                                         }
 
 
-//                                        else if(table[i][j].containsWithSameLeftHandSide(newUnaryProductionRule)) {
-//                                            ProductionRule productionRuleWithSameLeftHandSide = table[i][j].getProductionRuleWithSameLeftHandSide(newUnaryProductionRule);
-//
-//                                            if(newUnaryProductionRule.getProbability() > productionRuleWithSameLeftHandSide.getProbability()){
-//                                                table[i][j].replaceProductionRuleWithSameLeftHandSide(newUnaryProductionRule);
-//                                                someWereAdded = true;
-//                                            }
-//
-//                                        }
+                                        else if(table[i][j].containsWithSameLeftHandSide(newUnaryProductionRule)) {
+                                            ProductionRule productionRuleWithSameLeftHandSide = table[i][j].getProductionRuleWithSameLeftHandSide(newUnaryProductionRule);
+
+                                            if(newUnaryProductionRule.getProbability() > productionRuleWithSameLeftHandSide.getProbability()){
+                                                table[i][j].replaceProductionRuleWithSameLeftHandSide(newUnaryProductionRule);
+                                                //someWereAdded = true;
+                                            }
+
+                                        }
 
 
                                         else {
