@@ -105,8 +105,22 @@ public class ProductionRule {
         return result;
     }
 
+    private boolean isRightHandSideNonTerminal(){
+        return rightHandSide.get(0).toUpperCase().equals(rightHandSide.get(0));
+    }
+
     @Override
     public String toString(){
-        return this.leftHandSide + "  ==>  " + rightHandSide + "   " + probability;
+        String printString = "P(" + this.leftHandSide + ") = " + this.probability + " ";
+
+        if(isRightHandSideNonTerminal()){
+            printString += "(BackPointer = " + this.rightHandSide.get(0) +  ")";
+        }
+
+        return printString;
+
+
+
+        //return this.leftHandSide + "  ==>  " + rightHandSide + "   " + probability;
     }
 }

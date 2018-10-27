@@ -30,23 +30,8 @@ public class Main {
         ProductionRuleList[][] productionRules = new Parser().ckyParse(words, grammar);
 
 
-//        System.out.println(productionRules[0][4]);
+        new Printer().print(productionRules, words);
 
-        System.out.println(productionRules[0][1]);
-        System.out.println();
-        System.out.println();
-
-        System.out.println(productionRules[1][2]);
-        System.out.println();
-        System.out.println();
-
-        System.out.println(productionRules[2][3]);
-        System.out.println();
-        System.out.println();
-
-        System.out.println(productionRules[3][4]);
-        System.out.println();
-        System.out.println();
 
 
     }
